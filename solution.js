@@ -5,5 +5,21 @@ const multiplyValue = (value, multiplier) => {
     }
     return value * multiplier;
 };
-console.log(multiplyValue(7, 0));
+// console.log(multiplyValue(7, 0));
+//* Problem 2
+const processInput = (value) => {
+    if (typeof value === "string") {
+        return value.trim().toLowerCase();
+    }
+    else if (typeof value === "number") {
+        return value * 10;
+    }
+    else {
+        if (value === true) {
+            return "Active";
+        }
+        return "Inactive";
+    }
+};
+console.log(processInput(true));
 export {};
