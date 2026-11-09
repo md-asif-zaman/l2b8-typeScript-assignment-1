@@ -25,4 +25,6 @@ const processInput = (value: number | string | boolean): string | number => {
   }
 };
 
-console.log(processInput(true));
+// console.log(processInput(true));
+
+//* Problem 3

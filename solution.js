@@ -21,5 +21,6 @@ const processInput = (value) => {
         return "Inactive";
     }
 };
-console.log(processInput(true));
 export {};
+// console.log(processInput(true));
+//* Problem 3
