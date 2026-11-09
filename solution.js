@@ -26,5 +26,16 @@ const processInput = (value) => {
 const formatCoordinate = (arr) => {
     return `Location: ${arr[2]} (${arr[0]}, ${arr[1]})`;
 };
-console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+//* Problem 4
+const concatenateArrays = (...array) => {
+    const ar = [];
+    for (const arr of array) {
+        for (const a of arr) {
+            ar.push(a);
+        }
+    }
+    return ar;
+};
+console.log(concatenateArrays([1, 2], [3, 4], [5]));
 export {};

@@ -32,4 +32,18 @@ const formatCoordinate = (arr: readonly [number, number, string]): string => {
   return `Location: ${arr[2]} (${arr[0]}, ${arr[1]})`;
 };
 
-console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+
+//* Problem 4
+
+const concatenateArrays = <T>(...array: T[][]): T[] => {
+  const ar: T[] = [];
+
+  for (const arr of array) {
+    for (const a of arr) {
+      ar.push(a);
+    }
+  }
+  return ar;
+};
+console.log(concatenateArrays<number>([1, 2], [3, 4], [5]));
