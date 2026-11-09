@@ -21,6 +21,10 @@ const processInput = (value) => {
         return "Inactive";
     }
 };
-export {};
 // console.log(processInput(true));
 //* Problem 3
+const formatCoordinate = (arr) => {
+    return `Location: ${arr[2]} (${arr[0]}, ${arr[1]})`;
+};
+console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
+export {};

@@ -28,3 +28,8 @@ const processInput = (value: number | string | boolean): string | number => {
 // console.log(processInput(true));
 
 //* Problem 3
+const formatCoordinate = (arr: readonly [number, number, string]): string => {
+  return `Location: ${arr[2]} (${arr[0]}, ${arr[1]})`;
+};
+
+console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
