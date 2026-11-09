@@ -8,8 +8,6 @@ const multiplyValue = (value: number, multiplier?: number): number => {
   return value * multiplier;
 };
 
-// console.log(multiplyValue(7, 0));
-
 //* Problem 2
 
 const processInput = (value: number | string | boolean): string | number => {
@@ -24,8 +22,6 @@ const processInput = (value: number | string | boolean): string | number => {
     return "Inactive";
   }
 };
-
-// console.log(processInput(true));
 
 //* Problem 3
 
@@ -47,7 +43,6 @@ const concatenateArrays = <T>(...array: T[][]): T[] => {
   }
   return ar;
 };
-// console.log(concatenateArrays<number>([1, 2], [3, 4], [5]));
 
 //* Problem 5
 
@@ -74,8 +69,6 @@ const courses = [
   { title: "Next.js Pro", students: 85, isPublished: true },
 ];
 
-// console.log(getPopularCourses(courses, 80));
-
 //* Problem 6
 
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
@@ -87,8 +80,6 @@ const users = [
   { id: 2, name: "Sadia", role: "Editor" },
   { id: 3, name: "Tariq", role: "Subscriber" },
 ];
-
-// console.log(pluckValues(users, "name"));
 
 //* Problem 7
 
@@ -119,8 +110,6 @@ class Manager extends Employee {
 }
 
 const manager = new Manager("Alice", 50000, "Engineering");
-// console.log(manager.getDetails());
-// console.log(manager.getRoleInfo());
 
 //* Problem 8
 const validateAgeAsync = (age: number): Promise<string> => {
