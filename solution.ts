@@ -134,11 +134,3 @@ const validateAgeAsync = (age: number): Promise<string> => {
     }
   });
 };
-
-validateAgeAsync(20)
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.log(error.message);
-  });
