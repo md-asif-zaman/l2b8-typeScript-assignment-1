@@ -1,22 +1,11 @@
 # Access Modifiers in TypeScript OOP
 
-Access modifiers control the visibility and accessibility of class properties and methods in TypeScript.
-
-TypeScript provides the following access modifiers:
-
-1. `public`
-2. `private`
-3. `protected`
-4. `readonly`
-
----
-
 ## 1. Public
 
-- `public` is the default access modifier in TypeScript classes.
-- If we do not specify an access modifier, TypeScript automatically treats the property or method as `public`.
-- Public properties and methods can be accessed from inside the class and outside the class.
-- We can also modify public properties from outside the class.
+- `public` is the default access modifier in a class.
+- By default, all properties and methods are public. If we do not write `public`, TypeScript automatically treats them as public.
+- We can access public properties and methods from inside and outside the class.
+- We can change public properties from outside the class.
 
 ### Example:
 
@@ -40,11 +29,11 @@ console.log(dog.name); // Cat
 
 ## 2. Private
 
-- `private` properties and methods can only be accessed within the same class.
-- Private properties cannot be accessed directly from outside the class.
-- Child classes cannot access private properties or methods of their parent class.
-- We cannot directly modify private properties from outside the class.
-- We can use getter and setter methods to access and modify private properties in a controlled way.
+- Private properties and methods are only accessible within the same class.
+- Private properties are not accessible from outside the class.
+- We cannot change private properties from outside the class or from child classes.
+- Child classes cannot access their parent class's private properties.
+- We can access private properties using getter and setter methods.
 
 ### Example:
 
@@ -67,8 +56,70 @@ class Employee {
 const employee1 = new Employee("Mir", 2000);
 
 employee1.baseSalary = 3000;
-
-console.log(employee1.baseSalary); // 3000
 ```
 
-**Note:** Getter and setter methods provide controlled access to private
+---
+
+## 3. Protected
+
+- Protected properties and methods are only accessible within their own class and child classes.
+- Only child classes can access inherited protected properties.
+- Protected properties are not accessible from outside the parent and child classes.
+
+### Example:
+
+```ts
+class Employee {
+  constructor(
+    public name: string,
+    protected _baseSalary: number,
+  ) {}
+}
+
+class Manager extends Employee {
+  constructor(
+    name: string,
+    _baseSalary: number,
+    public teamMemberCount: number,
+  ) {
+    super(name, _baseSalary);
+  }
+
+  describeWork(): string {
+    return `${this.name} manages ${this.teamMemberCount} people`;
+  }
+
+  describeManager(): string {
+    return `${this.name} earns ${this._baseSalary} people`;
+  }
+}
+
+const manager = new Manager("Mizan", 40000, 30);
+```
+
+---
+
+## 4. Readonly
+
+- `readonly` prevents a property from being reassigned after initialization.
+- A value can be assigned inside the constructor.
+- A value can be assigned when declaring the property.
+- The property cannot be reassigned from outside the class after initialization.
+
+### Example:
+
+```ts
+class Employee {
+  name: string;
+  readonly baseSalary: number;
+
+  constructor(name: string, baseSalary: number) {
+    this.name = name;
+    this.baseSalary = baseSalary;
+  }
+}
+
+const employee1 = new Employee("Mir", 2000);
+
+console.log(employee1.baseSalary);
+```
