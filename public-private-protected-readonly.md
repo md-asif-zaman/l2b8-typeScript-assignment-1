@@ -1,66 +1,74 @@
-# TypeScript Questions & Answers
+# Access Modifiers in TypeScript OOP
 
-# Question 1: What are the core differences between type aliases and interface in TypeScript? When should you choose one over the other?
+Access modifiers control the visibility and accessibility of class properties and methods in TypeScript.
 
-## Answer:
+TypeScript provides the following access modifiers:
 
-Both type alias and interface are used to make type and both are almost similar but both has some difference.
+1. `public`
+2. `private`
+3. `protected`
+4. `readonly`
 
-We use **interface** when we need type of object and use **type alias** when need unions, intersections, tuples, primitives etc.
+---
 
-## Difference:
+## 1. Public
 
-### 1. Declaration Merging
+- `public` is the default access modifier in TypeScript classes.
+- If we do not specify an access modifier, TypeScript automatically treats the property or method as `public`.
+- Public properties and methods can be accessed from inside the class and outside the class.
+- We can also modify public properties from outside the class.
 
-We can make more than one interface in same name and TypeScript merge all of the same name interface and merge then to one interface. But in type alias if we do it TypeScript
-
-**Example:**
-
-**Interface:**
+### Example:
 
 ```ts
-interface IAddress {
-  street: string;
-  holding: number;
+class Animal {
+  public name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
 }
 
-interface IAddress {
-  streetNo: number;
+const dog = new Animal("Dog");
+
+dog.name = "Cat";
+
+console.log(dog.name); // Cat
+```
+
+---
+
+## 2. Private
+
+- `private` properties and methods can only be accessed within the same class.
+- Private properties cannot be accessed directly from outside the class.
+- Child classes cannot access private properties or methods of their parent class.
+- We cannot directly modify private properties from outside the class.
+- We can use getter and setter methods to access and modify private properties in a controlled way.
+
+### Example:
+
+```ts
+class Employee {
+  constructor(
+    public name: string,
+    private _baseSalary: number,
+  ) {}
+
+  get baseSalary(): number {
+    return this._baseSalary;
+  }
+
+  set baseSalary(newSalary: number) {
+    this._baseSalary = newSalary;
+  }
 }
+
+const employee1 = new Employee("Mir", 2000);
+
+employee1.baseSalary = 3000;
+
+console.log(employee1.baseSalary); // 3000
 ```
 
-**Type Alias:**
-
-```ts
-type TAddress = {
-  street: string;
-  holding: number;
-};
-
-// Show Error
-type TAddress = {
-  streetNo: number;
-};
-```
-
-### 2. Primitive Types
-
-We can just make interface for object only but using type alias we can make normal type like string, number.
-
-**Example:**
-
-**Type Alias:**
-
-```ts
-type TName = string;
-```
-
-**Interface:**
-
-```ts
-interface IUser {
-  name: string;
-}
-```
-
-### 3. Union
+**Note:** Getter and setter methods provide controlled access to private
