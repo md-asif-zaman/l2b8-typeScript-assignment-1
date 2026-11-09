@@ -1,5 +1,3 @@
-//* Problem 1
-
 const multiplyValue = (value: number, multiplier?: number): number => {
   if (multiplier === undefined) {
     return value * 2;
@@ -7,8 +5,6 @@ const multiplyValue = (value: number, multiplier?: number): number => {
 
   return value * multiplier;
 };
-
-//* Problem 2
 
 const processInput = (value: number | string | boolean): string | number => {
   if (typeof value === "string") {
@@ -23,15 +19,9 @@ const processInput = (value: number | string | boolean): string | number => {
   }
 };
 
-//* Problem 3
-
 const formatCoordinate = (arr: readonly [number, number, string]): string => {
   return `Location: ${arr[2]} (${arr[0]}, ${arr[1]})`;
 };
-
-// console.log(formatCoordinate([23.81, 90.41, "Dhaka"]));
-
-//* Problem 4
 
 const concatenateArrays = <T>(...array: T[][]): T[] => {
   const ar: T[] = [];
@@ -43,8 +33,6 @@ const concatenateArrays = <T>(...array: T[][]): T[] => {
   }
   return ar;
 };
-
-//* Problem 5
 
 interface Course {
   title: string;
@@ -62,26 +50,9 @@ const getPopularCourses = (
   );
 };
 
-const courses = [
-  { title: "TypeScript Mastery", students: 120, isPublished: true },
-  { title: "Draft Course", students: 200, isPublished: false },
-  { title: "Basic HTML", students: 45, isPublished: true },
-  { title: "Next.js Pro", students: 85, isPublished: true },
-];
-
-//* Problem 6
-
 const pluckValues = <T, K extends keyof T>(items: T[], key: K): T[K][] => {
   return items.map((item: T) => item[key]);
 };
-
-const users = [
-  { id: 1, name: "Rakib", role: "Admin" },
-  { id: 2, name: "Sadia", role: "Editor" },
-  { id: 3, name: "Tariq", role: "Subscriber" },
-];
-
-//* Problem 7
 
 class Employee {
   protected name: string;
@@ -109,11 +80,8 @@ class Manager extends Employee {
   }
 }
 
-const manager = new Manager("Alice", 50000, "Engineering");
-
-//* Problem 8
 const validateAgeAsync = (age: number): Promise<string> => {
-  return new Promise((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     if (age >= 18) {
       setTimeout(() => {
         resolve("Access Granted");

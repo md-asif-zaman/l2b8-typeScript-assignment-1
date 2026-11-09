@@ -1,9 +1,17 @@
-# l2b8-typeScript-assignment-1
+# L2B8 TypeScript Assignment 1
 
-## My Git Repo: https://github.com/md-asif-zaman/l2b8-typeScript-assignment-1
+## Assignment Overview
 
-## Apollo Git Repo: https://github.com/Apollo-Level2-Web-Dev/B8A1
+This assignment focuses on Problem Solving with TypeScript and Object-Oriented Programming (OOP).
 
-## Type vs Interface: https://github.com/md-asif-zaman/l2b8-typeScript-assignment-1/blob/main/type-vs-interface.md
+The assignment covers basic TypeScript concepts, optional parameters, union types, type narrowing, readonly tuples, generics, interfaces, Promises, and OOP concepts.
 
-## Public, Private, Protected, readonly modifiers: https://github.com/md-asif-zaman/l2b8-typeScript-assignment-1/blob/main/public-private-protected-readonly.md
+## Repository Links
+
+- [My GitHub Repository](https://github.com/md-asif-zaman/l2b8-typeScript-assignment-1)
+- [Apollo Level 2 Repository](https://github.com/Apollo-Level2-Web-Dev/B8A1)
+
+## Blog Posts
+
+1. [Type Alias vs Interface in TypeScript](./type-vs-interface.md)
+2. [Access Modifiers in TypeScript OOP](./public-private-protected-readonly.md)
